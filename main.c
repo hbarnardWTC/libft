@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 11:16:43 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/23 11:16:50 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/05/23 11:01:00 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/05/23 14:20:02 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-void	ft_putstr(char *c)
+int	main()
 {
-	int i;
-
-	i = 0;
-	while (c[i])
-	{
-		ft_putchar(c[i++]);
-	}
+	char *str = "Hello";
+	ft_putstr(ft_strdup(str));
+	ft_putchar('\n');
 }

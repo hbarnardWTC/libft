@@ -6,11 +6,11 @@
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 10:10:06 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/22 14:21:07 by hbarnard         ###   ########.fr       */
+/*   Updated: 2019/05/23 11:20:53 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar(char c);
+#include "libft.h"
 
 void	ft_putnbr(int nbr)
 {
@@ -18,10 +18,10 @@ void	ft_putnbr(int nbr)
 	{
 		nbr = -nbr;
 	}
-	if(nbr >= 10)
+	if (nbr >= 10)
 	{
-		ft_putnbr(nbr/10);
-		ft_putnbr(nbr%10);
+		ft_putnbr(nbr / 10);
+		ft_putnbr(nbr % 10);
 	}
 	else
 		ft_putchar(nbr + '0');
