@@ -6,7 +6,7 @@
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:48:34 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/23 14:20:46 by hbarnard         ###   ########.fr       */
+/*   Updated: 2019/05/27 10:11:54 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ char	*ft_strdup(char *s1)
 
 	i = 0;
 	str = (char*)malloc((ft_strlen(s1) + 1));
-	while(s1[i])
+	while (s1[i])
 	{
 		str[i] = s1[i];
 		i++;
 	}
+	str[i] = '\0';
 	return (str);
 }

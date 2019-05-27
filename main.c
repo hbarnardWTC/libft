@@ -1,36 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 09:35:26 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/27 12:31:45 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/05/23 11:01:00 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/05/27 11:01:11 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int neg;
-	int nbr;
-	int i;
+#include "libft.h"
+#include <stdio.h>
 
-	i = 0;
-	neg = 1;
-	nbr = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
-			|| str[i] == '\t' || str[i] == '\r')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{	
-		neg *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = nbr * 10 + (str[i] - 48);
-		i++;
-	}
-	return (nbr * neg);
+int	main()
+{
+	char *str = "Hello";
+	ft_putnbr(-2147483647);
+	ft_putchar('\n');
 }

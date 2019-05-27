@@ -1,36 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   isdigit.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 09:35:26 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/27 12:31:45 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/05/24 08:44:50 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/05/27 10:10:53 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
+int	ft_isdigit(int nbr)
 {
-	int neg;
-	int nbr;
-	int i;
-
-	i = 0;
-	neg = 1;
-	nbr = 0;
-	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
-			|| str[i] == '\t' || str[i] == '\r')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
-	{	
-		neg *= -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		nbr = nbr * 10 + (str[i] - 48);
-		i++;
-	}
-	return (nbr * neg);
+	if (nbr <= 57 && nbr >= 48)
+		return (1);
+	else
+		return (0);
 }
