@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/23 10:48:34 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/29 07:12:47 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/05/29 07:33:11 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/05/29 07:49:44 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *s1)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	int		i;
-	char	*str;
+	char	*source;
+	char	*dest;
+	size_t	i;
 
-	i = 0;
-	if (!(str = (char*)malloc((ft_strlen(s1) + 1))))
-		return (NULL);
-	while (s1[i])
-	{
-		str[i] = s1[i];
-		i++;
-	}
-	str[i] = '\0';
-	return (str);
+	i = -1;
+	source = (char *)src;
+	dest = (char *)dst;
+	if (source < dest)
+		while ((int)(--len) >= 0)
+			*(dest + len) = *(source + len);
+	else if(!(dst == '\0' && src == '\0'))
+		while (++i < len)
+		{
+			*(dest + i) = *(source + i);
+		}
+	return (dst);
 }
