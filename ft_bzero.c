@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:10:06 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/28 13:13:44 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/05/28 06:46:26 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/05/28 11:13:41 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr)
+void	ft_bzero(void *s, size_t n)
 {
-	long int	long_nbr;
+	size_t	i;
 
-	long_nbr = (long int)nbr;
-	if (long_nbr < 0)
+	i = 0;
+	while (i < n)
 	{
-		ft_putchar('-');
-		long_nbr = -long_nbr;
+		((char *)s)[i] = 0;
+		i++;
 	}
-	if (long_nbr >= 10)
-	{
-		ft_putnbr(long_nbr / 10);
-		ft_putnbr(long_nbr % 10);
-	}
-	else
-		ft_putchar(long_nbr + '0');
 }

@@ -6,16 +6,16 @@
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/23 10:55:59 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/23 11:30:25 by hbarnard         ###   ########.fr       */
+/*   Updated: 2019/05/28 09:53:51 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+int	ft_strlen(const char *s)
 {
 	int	i;
 
 	i = 0;
-	while (str[i])
+	while (s[i])
 		i++;
 	return (i);
 }

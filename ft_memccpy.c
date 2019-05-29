@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/22 10:10:06 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/28 13:13:44 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/05/28 07:08:39 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/05/28 10:26:27 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int nbr)
+void	*ft_memccpy(void *restrict dst, const void *restrict src, int c, size_t n)
 {
-	long int	long_nbr;
+	size_t			i;
+	unsigned char	*source;
+	unsigned char	*dest;
 
-	long_nbr = (long int)nbr;
-	if (long_nbr < 0)
+	i = 0;
+	source = (unsigned char *)src;
+	dest = (unsigned char *)dst;
+	while (i < n)
 	{
-		ft_putchar('-');
-		long_nbr = -long_nbr;
+		dest[i] = source[i];
+		if (source[i] == (unsigned char)c)
+			return (dst + i + 1);
+		i++;
 	}
-	if (long_nbr >= 10)
-	{
-		ft_putnbr(long_nbr / 10);
-		ft_putnbr(long_nbr % 10);
-	}
-	else
-		ft_putchar(long_nbr + '0');
+	return (NULL);
 }
