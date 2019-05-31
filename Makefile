@@ -17,9 +17,17 @@ SRC =	ft_putchar.c \
 		ft_strcpy.c \
 		ft_strncpy.c \
 		ft_strcat.c \
-
+		ft_strncat.c \
+		ft_strlcat.c \
+		ft_strchr.c \
+		ft_strrchr.c \
+		ft_strstr.c \
+		ft_strnstr.c \
+		ft_strcmp.c \
+		ft_strncmp.c \
 
 all:
+
 		gcc -c $(SRC) -Wall -Werror -Wextra -I .
 		ar -rc $(NAME) *.o
 		ranlib libft.a
