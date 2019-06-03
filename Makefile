@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/06/03 11:01:21 by hbarnard          #+#    #+#              #
+#    Updated: 2019/06/03 13:33:44 by hbarnard         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME =	libft.a
 
 SRC =	ft_putchar.c \
@@ -32,6 +44,9 @@ SRC =	ft_putchar.c \
 		ft_isascii.c \
 		ft_isprint.c \
 		ft_toupper.c \
+		ft_tolower.c \
+		ft_memalloc.c \
+		ft_iswhitespace.c \
 
 
 all:

@@ -6,7 +6,7 @@
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 09:07:48 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/05/31 09:35:21 by hbarnard         ###   ########.fr       */
+/*   Updated: 2019/06/03 10:53:45 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t	len;
-	int i;
+	int		i;
 
 	i = 0;
 	if (*s2 == '\0')
