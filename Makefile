@@ -25,6 +25,14 @@ SRC =	ft_putchar.c \
 		ft_strnstr.c \
 		ft_strcmp.c \
 		ft_strncmp.c \
+		ft_isupper.c \
+		ft_islower.c \
+		ft_isalpha.c \
+		ft_isalnum.c \
+		ft_isascii.c \
+		ft_isprint.c \
+		ft_toupper.c \
+
 
 all:
 
