@@ -47,7 +47,11 @@ SRC =	ft_putchar.c \
 		ft_tolower.c \
 		ft_memalloc.c \
 		ft_iswhitespace.c \
-
+		ft_memdel.c \
+		ft_strnew.c \
+		ft_strdel.c \
+		ft_strclr.c \
+		ft_striter.c \
 
 all:
 
