@@ -1,34 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strsub.c                                           :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:11:52 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/06/05 13:16:06 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/06/06 12:51:10 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/06/06 12:54:51 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int	ft_word_count(char const *s, char c)
 {
-    char    *sub;
-    size_t  size;
-    int     i;
+	int	count;
+	int	i;
 
-    i = 0;
-    size = len + 1;
-    if (!(sub = (char *)malloc(size)))
-        return (NULL);
-    if (s == NULL || len == 0)
-        return (NULL);
-    while ((int)len > i)
-    {
-        sub[i] = s[start + i];
-        i++;
-    }
-    sub[i] = '\0';
-    return (sub);
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		while (s[i] == c)
+			i++;
+		if (s[i] != c && s[i] != '\0')
+			count++;
+		while (s[i] != c && s[i] != '\0')
+			i++;
+	}
+	return (count);
 }

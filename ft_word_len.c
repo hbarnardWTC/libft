@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strsub.c                                           :+:      :+:    :+:   */
+/*   ft_delimword.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:11:52 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/06/05 13:16:06 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/06/06 11:41:52 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/06/06 11:42:50 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+int	ft_word_len(char const *str, char c)
 {
-    char    *sub;
-    size_t  size;
-    int     i;
+	int	i;
+	int	len;
 
-    i = 0;
-    size = len + 1;
-    if (!(sub = (char *)malloc(size)))
-        return (NULL);
-    if (s == NULL || len == 0)
-        return (NULL);
-    while ((int)len > i)
-    {
-        sub[i] = s[start + i];
-        i++;
-    }
-    sub[i] = '\0';
-    return (sub);
+	i = 0;
+	len = 0;
+	while (str[i] == c)
+		i++;
+	while (str[i] != c && str[i] != '\0')
+	{
+		i++;
+		len++;
+	}
+	return (len);
 }

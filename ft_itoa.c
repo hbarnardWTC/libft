@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strsub.c                                           :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:11:52 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/06/05 13:16:06 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/06/06 13:11:08 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/06/06 13:11:22 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+char    *ft_itoa(int n)
 {
-    char    *sub;
-    size_t  size;
     int     i;
+    char    *a;
+    size_t  len;
 
     i = 0;
-    size = len + 1;
-    if (!(sub = (char *)malloc(size)))
-        return (NULL);
-    if (s == NULL || len == 0)
-        return (NULL);
-    while ((int)len > i)
+    len = ft_nbr_len(n);
+    if (n < 0)
     {
-        sub[i] = s[start + i];
+    if  (!(a = (char *)malloc(len + 2)))
+        return (NULL);
+    a[i++] = '-';
+    }
+    else
+    {
+    if  (!(a = (char *)malloc(len + 1)))
+        return (NULL);
+    }
+    while (i < (int)len)
+    {
+        a[len - i] = ft_power_of(10,i) + 48i;
         i++;
     }
-    sub[i] = '\0';
-    return (sub);
+    return (a);
 }

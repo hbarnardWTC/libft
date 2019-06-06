@@ -58,6 +58,15 @@ SRC =	ft_putchar.c \
 		ft_strequ.c \
 		ft_strnequ.c \
 		ft_strsub.c \
+		ft_strjoin.c \
+		ft_strtrim.c \
+		ft_word_len.c \
+		ft_word_count.c \
+		ft_strsplit.c \
+		ft_nbr_len.c \
+		ft_power_of.c \
+		ft_itoa.c \
+
 
 all:
 

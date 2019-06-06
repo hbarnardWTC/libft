@@ -1,34 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strsub.c                                           :+:      :+:    :+:   */
+/*   ft_nbr_len.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/05 13:11:52 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/06/05 13:16:06 by hbarnard         ###   ########.fr       */
+/*   Created: 2019/06/06 13:14:49 by hbarnard          #+#    #+#             */
+/*   Updated: 2019/06/06 13:14:52 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char const *s, unsigned int start, size_t len)
+size_t ft_nbr_len(int n)
 {
-    char    *sub;
-    size_t  size;
-    int     i;
+    int i;
 
-    i = 0;
-    size = len + 1;
-    if (!(sub = (char *)malloc(size)))
-        return (NULL);
-    if (s == NULL || len == 0)
-        return (NULL);
-    while ((int)len > i)
+    i = 1;
+    if (n < 0)
     {
-        sub[i] = s[start + i];
+        n *= -1;
         i++;
     }
-    sub[i] = '\0';
-    return (sub);
+    while (n > 9)
+    {
+        i++;
+        n = n / 10;
+    }
+    return (i);
 }

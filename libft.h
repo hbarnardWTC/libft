@@ -20,7 +20,7 @@
 void	ft_putchar(char c);
 void	ft_putstr(const char *c);
 void	ft_putnbr(int nbr);
-int		ft_strlen(const char *s);
+size_t  ft_strlen(const char *s);
 char	*ft_strdup(const char *s1);
 int		ft_isdigit(int c);
 int		ft_atoi(const char *s);
@@ -63,4 +63,12 @@ char    *ft_strmapi(char const *s, char(*f)(unsigned int, char));
 int     ft_strequ(char const *s1, char const *s2);
 int     ft_strnequ(char const *s1, char const *s2, size_t n);
 char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char    *ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s);
+int     ft_word_len(char const *str, char c);
+int	    ft_word_count(char const *s, char c);
+char    **ft_strsplit(char const *s, char c);
+size_t  ft_nbr_len(int n);
+int     ft_power_of(int a, int b);
+char    *ft_itoa(int n);
 #endif
