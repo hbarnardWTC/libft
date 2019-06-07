@@ -14,21 +14,21 @@
 
 char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-    char    *sub;
-    size_t  size;
-    int     i;
+	char	*sub;
+	size_t	size;
+	int		i;
 
-    i = 0;
-    size = len + 1;
-    if (!(sub = (char *)malloc(size)))
-        return (NULL);
-    if (s == NULL || len == 0)
-        return (NULL);
-    while ((int)len > i)
-    {
-        sub[i] = s[start + i];
-        i++;
-    }
-    sub[i] = '\0';
-    return (sub);
+	i = 0;
+	size = len + 1;
+	if (!(sub = (char *)malloc(size)))
+		return (NULL);
+	if (s == NULL || len == 0)
+		return (NULL);
+	while ((int)len > i)
+	{
+		sub[i] = s[start + i];
+		i++;
+	}
+	sub[i] = '\0';
+	return (sub);
 }

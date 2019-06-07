@@ -12,29 +12,25 @@
 
 #include "libft.h"
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-    int     i;
-    char    *a;
-    size_t  len;
+	char			*str;
+	size_t			str_len;
+	unsigned int	n_cpy;
 
-    i = 0;
-    len = ft_nbr_len(n);
-    if (n < 0)
-    {
-    if  (!(a = (char *)malloc(len + 2)))
-        return (NULL);
-    a[i++] = '-';
-    }
-    else
-    {
-    if  (!(a = (char *)malloc(len + 1)))
-        return (NULL);
-    }
-    while (i < (int)len)
-    {
-        a[len - i] = ft_power_of(10,i) + 48i;
-        i++;
-    }
-    return (a);
+	str_len = ft_nbr_len(n);
+	n_cpy = n;
+	if (n < 0)
+	{
+		n_cpy = -n;
+		str_len++;
+	}
+	if (!(str = ft_strnew(str_len)))
+		return (NULL);
+	str[--str_len] = n_cpy % 10 + '0';
+	while (n_cpy /= 10)
+		str[--str_len] = n_cpy % 10 + '0';
+	if (n < 0)
+		*(str + 0) = '-';
+	return (str);
 }

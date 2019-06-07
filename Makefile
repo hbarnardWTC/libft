@@ -66,12 +66,17 @@ SRC =	ft_putchar.c \
 		ft_nbr_len.c \
 		ft_power_of.c \
 		ft_itoa.c \
+		ft_putendl.c \
+		ft_putchar_fd.c \
+		ft_putstr_fd.c \
+		ft_putendl_fd.c \
+		ft_putnbr_fd.c \
 
 
 all:
 
-		gcc -c $(SRC) -Wall -Werror -Wextra -I .
-		ar -rc $(NAME) *.o
+		gcc -c -Wall -Werror -Wextra -I . $(SRC)
+		ar rcs $(NAME) $(SRC:%.c=%.o)
 		ranlib libft.a
 
 clean:
