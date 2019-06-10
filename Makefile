@@ -12,6 +12,8 @@
 
 NAME =	libft.a
 
+CFLAGS	= -Wall -Werror -Wextra -I. -c
+
 SRC =	ft_putchar.c \
 	   	ft_putnbr.c \
 		ft_putstr.c \
@@ -71,31 +73,28 @@ SRC =	ft_putchar.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
 		ft_putnbr_fd.c \
+		ft_lstnew.c \
+		ft_lstdelone.c \
+		ft_lstdel.c \
+		ft_lstadd.c \
+		ft_lstiter.c \
+		ft_lstmap.c \
 
+OBJ	= $(SRC:%.c=%.o)
 
-all:
+all : $(NAME)
 
-		gcc -c -Wall -Werror -Wextra -I . $(SRC)
-		ar rcs $(NAME) $(SRC:%.c=%.o)
-		ranlib libft.a
+$(NAME): $(OBJ)	
+	ar rcs $(NAME) $(OBJ)
 
-clean:
-		rm *.o
+clean: 
+	rm -f $(OBJ)
 
 fclean: clean
-		rm libft.a
+	rm -f $(NAME)
 
-re:		fclean all
-
-dood:	all
-		gcc	libft.a main.c
-		./a.out
-		rm a.out
+re: fclean all
 
 norm:
 		norminette $(SRC)
 
-test:	norm
-		gcc main.c libft.a  -Wall -Werror -Wextra -o test
-		./test
-		rm test
