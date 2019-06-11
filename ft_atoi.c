@@ -6,19 +6,11 @@
 /*   By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 09:35:26 by hbarnard          #+#    #+#             */
-/*   Updated: 2019/06/03 09:03:16 by hbarnard         ###   ########.fr       */
+/*   Updated: 2019/06/11 16:58:25 by hbarnard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static	int	minmax(int negative)
-{
-	if (negative == 1)
-		return (-1);
-	else
-		return (0);
-}
 
 int			ft_atoi(const char *s)
 {
@@ -39,10 +31,7 @@ int			ft_atoi(const char *s)
 	}
 	while (ft_isdigit(s[i]))
 	{
-		if (nbr <= 2147483647 / 10)
-			nbr = nbr * 10 + (s[i] - 48);
-		else
-			return (minmax(neg));
+		nbr = nbr * 10 + (s[i] - 48);
 		i++;
 	}
 	return (nbr * neg);

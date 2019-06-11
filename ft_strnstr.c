@@ -15,18 +15,14 @@
 char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t	len;
-	int		i;
 
-	i = 0;
 	if (*s2 == '\0')
 		return ((char *)s1);
 	len = ft_strlen(s2);
-	while (s1[i] && n > len)
+	while (*s1 && n-- >= len)
 	{
-		n--;
 		if (*s1 == *s2 && ft_memcmp(s1, s2, len) == 0)
 			return ((char *)s1);
-		i++;
 		s1++;
 	}
 	return (NULL);
