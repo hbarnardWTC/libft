@@ -20,7 +20,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	strlens1;
 	size_t	strlens2;
 
-	if (s1 == NULL || s2 == NULL)
+	if (!s1 || !s2)
 		return (NULL);
 	strlens1 = ft_strlen(s1);
 	strlens2 = ft_strlen(s2);
@@ -32,5 +32,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		join[i] = s1[i];
 	while (++j < strlens2)
 		join[i++] = s2[j];
+	join[i] = '\0';
 	return (join);
 }

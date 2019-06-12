@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_strcmp(const char *s1, const char *s2)
 {
 	int				i;
@@ -21,8 +23,10 @@ int	ft_strcmp(const char *s1, const char *s2)
 	c2 = (unsigned char *)s2;
 	while (c1[i] != '\0' && c2[i] != '\0')
 	{
-		if (c1[i] != c2[i])
-			return (c1[i] - c2[i]);
+		if (c1[i] > c2[i])
+			return (1);
+		else if (c1[i] < c2[i])
+			return (-1);
 		i++;
 	}
 	return (c1[i] - c2[i]);
