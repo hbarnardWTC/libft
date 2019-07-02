@@ -79,6 +79,8 @@ SRC =	ft_putchar.c \
 		ft_lstadd.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
+		ft_strndup.c \
+		poschr.c \
 
 OBJ	= $(SRC:%.c=%.o)
 
