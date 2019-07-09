@@ -12,19 +12,18 @@
 
 #include "libft.h"
 
-char	*ft_strndup(const char *s1, int len)
+char	*ft_strndup(const char *s1, size_t len)
 {
-	int		i;
-	char	*str;
+	size_t		i;
+	char		*str;
 
 	i = 0;
-	if (!(str = (char*)malloc((ft_strlen(s1) + 1))))
+	if (!(str = ft_strnew(len))
 		return (NULL);
 	while (s1[i] && i < len)
 	{
 		str[i] = s1[i];
 		i++;
 	}
-	str[i] = '\0';
 	return (str);
 }
