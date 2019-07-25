@@ -6,7 +6,7 @@
 #    By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 11:01:21 by hbarnard          #+#    #+#              #
-#    Updated: 2019/06/03 13:33:44 by hbarnard         ###   ########.fr        #
+#    Updated: 2019/07/25 14:02:04 by hbarnard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,7 +80,8 @@ SRC =	ft_putchar.c \
 		ft_lstiter.c \
 		ft_lstmap.c \
 		ft_strndup.c \
-		poschr.c 
+		poschr.c \
+		get_next_line.c 
 
 OBJ	= $(SRC:%.c=%.o)
 
