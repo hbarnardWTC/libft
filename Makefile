@@ -6,7 +6,7 @@
 #    By: hbarnard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/06/03 11:01:21 by hbarnard          #+#    #+#              #
-#    Updated: 2019/08/29 08:35:26 by hbarnard         ###   ########.fr        #
+#    Updated: 2019/09/12 13:32:07 by hbarnard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -82,7 +82,8 @@ SRC =	ft_putchar.c \
 		ft_strndup.c \
 		poschr.c \
 		get_next_line.c \
-		ft_stralen.c
+		ft_stralen.c \
+		exit_m
 
 OBJ	= $(SRC:%.c=%.o)
 
